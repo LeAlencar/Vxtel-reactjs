@@ -2,8 +2,6 @@
 
 This is the frontend for the Vxtel Project.
 
-## Available Scripts
-
 I used React to develop this.
 
 ###
