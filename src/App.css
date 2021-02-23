@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.Header {
+  background-color:#009879;
+  height: 70px;
+}
+
+.Header h1 {
+  padding: 10px;
+}

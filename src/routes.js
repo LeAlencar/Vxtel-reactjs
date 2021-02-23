@@ -1,13 +1,15 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Main from './pages/Main';
 import Calc from './pages/Calc';
+import Vxtel from './pages/Vxtel';
 
 const Routes = () => (
-    <BrowserRouter>
-        <Route path="/" component={Main} />
+    <Router>
+        <Route path="/" exact component={Vxtel} />
+        <Route path="/" exact component={Main} />
         <Route path="/show" component={Calc} />
-    </BrowserRouter>
+    </Router>
 );
 
 export default Routes;

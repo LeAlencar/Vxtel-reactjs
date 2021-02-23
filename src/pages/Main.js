@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import api from "../services/api";
-import { useHistory } from "react-router-dom";
+import './style.css'
 
-export default class Main extends Component {
+class Main extends Component {
   state = {
     products: [],
   };
-
+  
   componentDidMount() {
     this.loadProducts();
   }
@@ -18,47 +18,47 @@ export default class Main extends Component {
   };
   getProduct = async (event) => {
     event.preventDefault();
-    //let history = useHistory()
     const { target } = event;
-    const origins = target.origins.selectedOptions[0].value;
+    const origin = target.origin.selectedOptions[0].value;
     const destiny = target.destiny.selectedOptions[0].value;
     const plan = target.plans.selectedOptions[0].value;
     const duration = target.duration.value;
   
-    console.log({ origins, destiny, plan, duration });
+    
+    
     const response = await api.get("/show", {
         params: {
-        origin: origins,
+        origin: origin,
         destiny: destiny,
         plan: plan,
         duration: duration,
       }
     });
-    // history only works on function
-    //history.push("/show", response.data)
+    this.props.history.push("/show", response.data)
   };
-
+  
+  
   render() {
     const { products } = this.state;
     return (
       <div className="product-list">
         <form onSubmit={this.getProduct}>
-          <table>
+          <table className="styled-table">
             <thead>
               <tr>
                 <th>Origem</th>
                 <th>Destino</th>
-                <th>Plano?</th>
-                <th>Duração / min</th>
-                <th>Ação</th>
+                <th>Plano</th>
+                <th>Duração/min</th>
+              
               </tr>
             </thead>
 
             <tbody>
               <tr>
                 <td>
-                  <select id="origins">
-                    {" "}
+                  <select id="origin">
+                    
                     {products.map((product) => (
                       <option value={product.origin}>{product.origin}</option>
                     ))}
@@ -66,7 +66,6 @@ export default class Main extends Component {
                 </td>
                 <td>
                   <select id="destiny">
-                    {" "}
                     {products.map((product) => (
                       <option value={product.destiny}>{product.destiny}</option>
                     ))}
@@ -92,9 +91,11 @@ export default class Main extends Component {
               </tr>
             </tbody>
           </table>
-          <button>Calcular</button>
+          <button className="button">Calcular</button>
         </form>
       </div>
     );
   }
 }
+
+export default Main;

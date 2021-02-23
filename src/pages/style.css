@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+.Vxtel {
+    margin: 30px auto;
+    width: 500px;
+
+}
+.Vxtel h3 {
+    margin: 0 auto;
+    width: 300px;
+    padding: 15px 20px;
+    
+}
+
+.display-all {
+    margin: 30px auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.display-plans {
+    margin: 30px auto;
+    display: grid;
+    width: 500px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.display-plans p {
+    margin-top: 10px;
+}
+
+.display-text p{
+    margin-top: 20px;
+}
+
+.FaleMais {
+    margin: 0;
+}
+
+.product-list {
+    width: 450px;
+    margin: 30px auto;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    text-align: center;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table tr th {
+    text-align: center;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.button {
+    margin-top: 10px;
+    background-color: gray;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    color: white;
+    cursor: pointer;
+    transition: .3s;
+    margin-left: 50px;
+    text-decoration: none;
+}
+
+.button:hover {
+    border: 1px solid gray;
+    background-color: white;
+    color: gray;
+    padding: 10px 25px;
+    transition: .3s;
+}
